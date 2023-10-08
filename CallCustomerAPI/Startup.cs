@@ -33,6 +33,15 @@ namespace CallCustomerAPI
                 // You can configure other HttpClient settings here
             });
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
