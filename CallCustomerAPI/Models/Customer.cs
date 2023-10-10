@@ -26,7 +26,7 @@ namespace CallCustomerAPI.Models
         public string Country_Name { get; set; }
         public string Primary_Language_Code { get; set; }
         public string Primary_Language { get; set; }
-        public decimal Balance { get; set; }
+        public string Balance { get; set; }
         public string Phone_Number { get; set; }
         public string Currency { get; set; }
     }

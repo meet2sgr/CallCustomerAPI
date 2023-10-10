@@ -38,6 +38,7 @@ namespace CallCustomerAPI
                 options.AddDefaultPolicy(builder =>
                 {
                     builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader();
                 });
@@ -57,6 +58,8 @@ namespace CallCustomerAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
